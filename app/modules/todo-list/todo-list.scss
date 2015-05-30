@@ -1,0 +1,34 @@
+.todo-list {
+  list-style: none;
+  margin: 20px 0 0 0;
+  padding: 20px 0 0 0;
+  border-top: 2px solid #CCC;
+}
+
+.todo-list__item {
+  padding: 6px 12px;
+  &:hover {
+    background-color: #ededed;
+  }
+}
+
+.todo-list__item__order,
+.todo-list__item__content,
+.todo-list__item__buttons {
+  display: inline-block;
+  padding-right: 5px;
+}
+
+.todo-list__item__order {
+  width: 10%;
+  font-weight: bold;
+}
+
+.todo-list__item__content {
+  width: 70%;
+}
+
+.todo-list__item__buttons {
+  width: 20%;
+  text-align: right;
+}
