@@ -1,6 +1,6 @@
 # TODO Speech
 
-Another TODO app but this time I made use of **Web Speech API**. Created as an ES6 [Devmeetings](http://devmeetings.pl) example.
+Another TODO app but this time I made use of **Web Speech API** ([Can I use](http://caniuse.com/web-speech)). Created as an ES6 [Devmeetings](http://devmeetings.pl) example.
 
 ## Installation
 
