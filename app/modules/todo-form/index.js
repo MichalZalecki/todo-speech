@@ -1,3 +1,3 @@
-'use strict';
+"use strict";
 
-export default require('./todo-form')
+export default require("./todo-form")

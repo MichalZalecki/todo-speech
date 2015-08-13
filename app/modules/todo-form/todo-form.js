@@ -1,14 +1,14 @@
-'use strict';
+"use strict";
 
-require('./todo-form.scss');
+require("./todo-form.scss");
 
-let todoForm            = document.querySelector('#todo-form');
-let contentField        = document.querySelector('.content-field');
-let contentFieldFinal   = document.querySelector('.content-field__final');
-let contentFieldInterim = document.querySelector('.content-field__interim');
-let buttonSpeech        = document.querySelector('.content-buttons__speech');
-let speechMute          = document.querySelector('.content-buttons__speech__mute');
-let speechUnmute        = document.querySelector('.content-buttons__speech__unmute');
+let todoForm            = document.querySelector("#todo-form");
+let contentField        = document.querySelector(".content-field");
+let contentFieldFinal   = document.querySelector(".content-field__final");
+let contentFieldInterim = document.querySelector(".content-field__interim");
+let buttonSpeech        = document.querySelector(".content-buttons__speech");
+let speechMute          = document.querySelector(".content-buttons__speech__mute");
+let speechUnmute        = document.querySelector(".content-buttons__speech__unmute");
 
 // focus at the end of the element
 function focusCursorAtTheEnd(elem) {
@@ -24,21 +24,21 @@ function focusCursorAtTheEnd(elem) {
   elem.focus();
 }
 
-contentField.addEventListener('click', () => {
+contentField.addEventListener("click", () => {
   focusCursorAtTheEnd(contentFieldFinal)
 });
 
-contentFieldFinal.addEventListener('click', (e) => {
+contentFieldFinal.addEventListener("click", (e) => {
   // allow cursor to change position inside contentFieldFinal
   e.stopPropagation();
 });
 
 // simple focus fake
-contentFieldFinal.addEventListener('focus', () => {
-  contentField.classList.add('focus');
+contentFieldFinal.addEventListener("focus", () => {
+  contentField.classList.add("focus");
 });
-contentFieldFinal.addEventListener('blur', () => {
-  contentField.classList.remove('focus');
+contentFieldFinal.addEventListener("blur", () => {
+  contentField.classList.remove("focus");
 });
 
 // ES6: Enhanced Object Literals

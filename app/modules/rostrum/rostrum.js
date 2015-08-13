@@ -1,16 +1,16 @@
-'use strict';
+"use strict";
 
-// Web Speech API isn't part of ES6 of course
-// but still... it's f*****g awesome!
-// It's working only in WebKit based browsers, though.
+// Web Speech API isn"t part of ES6 of course
+// but still... it"s f*****g awesome!
+// It"s working only in WebKit based browsers, though.
 // See: http://caniuse.com/web-speech
 
 class Rostrum {
   // ES6: Default parameters
   constructor(fnFinal  = () => {}, fnInterm = () => {},
               fnResult = () => {}, fnEnd    = () => {}) {
-    if (!('webkitSpeechRecognition' in window)) {
-      console.warn('webkitSpeechRecognition is not defined');
+    if (!("webkitSpeechRecognition" in window)) {
+      console.warn("webkitSpeechRecognition is not defined");
       this.speechRecognitionSupport = false;
     } else {
       this.speechRecognitionSupport = true;
@@ -48,14 +48,14 @@ class Rostrum {
       }
       this.recognition.onerror = (e) => {
         switch(e.error) {
-          case 'no-speech':
-            console.warn('Mic was turned off for AFK!');
+          case "no-speech":
+            console.warn("Mic was turned off for AFK!");
             break;
-          case 'audio-capture':
-            console.warn('You need a mic, dude.');
+          case "audio-capture":
+            console.warn("You need a mic, dude.");
             break;
-          case 'not-allowed':
-            console.warn('C\'mon! Let me in!');
+          case "not-allowed":
+            console.warn("C\"mon! Let me in!");
             break;
           default:
             console.error(e.error);

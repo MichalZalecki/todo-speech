@@ -1,11 +1,11 @@
-'use strict';
+"use strict";
 
 // ES6: Modules
 // imports in Wop wop ES6 style!
-import './style.scss';
-import * as todoForm from 'todo-form';
-import TodoListCtrl from 'todo-list';
-import Rostrum from 'rostrum';
+import "./style.scss";
+import * as todoForm from "todo-form";
+import TodoListCtrl from "todo-list";
+import Rostrum from "rostrum";
 
 // ES6: Let keyword
 let listCtrl = new TodoListCtrl();
@@ -15,11 +15,11 @@ let handleSubmission = () => {
   // add todo to the list
   listCtrl.addTodo(todoForm.contentFieldFinal.innerHTML);
   // clean up
-  todoForm.contentFieldFinal.innerHTML = '';
+  todoForm.contentFieldFinal.innerHTML = "";
   todoForm.contentFieldFinal.focus();
 }
 // handle submission on form submit
-todoForm.form.addEventListener('submit', (e) => {
+todoForm.form.addEventListener("submit", (e) => {
   e.preventDefault();
   handleSubmission();
 });
@@ -34,20 +34,20 @@ let rostrum = new Rostrum((txt, haveKeyword) => {
   if (note) todoForm.contentFieldInterim.innerHTML += txt;
 }, () => {
   // on result callback
-  if (note) todoForm.contentFieldInterim.innerHTML = '';
+  if (note) todoForm.contentFieldInterim.innerHTML = "";
 }, () => {
   // on end callback
-  todoForm.speechMute.classList.remove('active');
-  todoForm.speechUnmute.classList.add('active');
+  todoForm.speechMute.classList.remove("active");
+  todoForm.speechUnmute.classList.add("active");
 });
 
 // mic is unmuted by default... thankfully
-todoForm.speechUnmute.classList.add('active');
+todoForm.speechUnmute.classList.add("active");
 
 // Speech Recognition functionaly
 if (rostrum.speechRecognitionSupport) {
   // recognition language
-  rostrum.setLang('pl');
+  rostrum.setLang("pl");
 
   // recognition keywords
   rostrum.addKeyword(/start/, () => {
@@ -63,18 +63,18 @@ if (rostrum.speechRecognitionSupport) {
     listCtrl.removeTodo(parseInt(match[1]));
   });
 
-  todoForm.buttonSpeech.addEventListener('click', (e) => {
+  todoForm.buttonSpeech.addEventListener("click", (e) => {
     // prevent form submission
     e.preventDefault();
     // manage speech button
     if (rostrum.recognizing) {
       rostrum.stop();
-      todoForm.speechMute.classList.remove('active');
-      todoForm.speechUnmute.classList.add('active');
+      todoForm.speechMute.classList.remove("active");
+      todoForm.speechUnmute.classList.add("active");
     } else {
       rostrum.start();
-      todoForm.speechMute.classList.add('active');
-      todoForm.speechUnmute.classList.remove('active');
+      todoForm.speechMute.classList.add("active");
+      todoForm.speechUnmute.classList.remove("active");
     }
   });
 } else {

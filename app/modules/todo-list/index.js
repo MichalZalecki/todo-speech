@@ -1,3 +1,3 @@
-'use strict';
+"use strict";
 
-export default require('./todo-list');
+export default require("./todo-list");
