@@ -13,9 +13,15 @@ module.exports = {
     root: __dirname + '/app/modules'
   },
   module: {
+    preLoaders: [
+      { test: /\.js$/, exclude: /(node_modules|bower_components)/, loader: 'eslint' },
+    ],
     loaders: [
-      { test: /\.js$/, exclude: /(node_modules|bower_components)/, loader: 'babel?modules=amd' },
+      { test: /\.js$/, exclude: /(node_modules|bower_components)/, loader: 'babel' },
       { test: /\.scss$/, loader: 'style!css!sass' }
     ]
+  },
+  eslint: {
+    configFile: './.eslintrc'
   }
 }
